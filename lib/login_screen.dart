@@ -11,14 +11,18 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController usernameController = TextEditingController();
-  String label = "label kosong";
+  TextEditingController passwordController = TextEditingController();
+  // String label = "label kosong";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text("Login"),
+        backgroundColor: Colors.pink,
+        title: Text(
+          "Login",
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
       ),
       body: Padding(
@@ -32,18 +36,33 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   labelText: "username",
-                  hintText: "masukkan username anda"),
+                  hintText: "masukkan username.."),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              obscureText: true,
+              controller: passwordController,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  labelText: "password",
+                  hintText: "masukkan password.."),
+            ),
+            SizedBox(
+              height: 10,
             ),
             ElevatedButton(
               onPressed: () {
                 Get.to(() => MainPage());
                 setState(() {
-                  label = usernameController.text;
+                  usernameController.text;
                 });
               },
               child: Text("Login"),
             ),
-            Text(label),
           ],
         ),
       ),

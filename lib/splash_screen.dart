@@ -22,7 +22,19 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome..'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.sentiment_satisfied,
+              size: 60,
+            ),
+            Text(
+              'Welcome..',
+              style: TextStyle(fontSize: 15),
+            ),
+          ],
+        ),
       ),
     );
   }

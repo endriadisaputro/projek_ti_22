@@ -10,7 +10,10 @@ class ProfilScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.pink,
-          title: Text('Profil'),
+          title: Text(
+            'Profil',
+            style: TextStyle(fontSize: 20),
+          ),
           centerTitle: true,
           titleTextStyle: TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
